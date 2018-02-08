@@ -1,0 +1,15 @@
+# source database
+source:
+    host: 10.10.10.10
+    port: 3306
+    user: user01
+    password: 123456
+    database: test01
+
+# target database
+destination:
+    host: 10.10.10.20
+    port: 3326
+    user: user02
+    password: 654321
+    database: test02
