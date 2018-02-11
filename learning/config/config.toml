@@ -1,0 +1,21 @@
+[database]
+    # query rows from source database
+    [database.source]
+    host = "10.10.10.10"
+    port = 3306
+    user = "user01"
+    password = "123456"
+    database = "test01"
+
+    # insert rows to target database after parsed rows
+    [database.target]
+    host = "10.10.10.10"
+    port = 3306
+    user = "user01"
+    password = "123456"
+    database = "test01"
+
+[parameter]
+max_threads = 5
+is_enabled = false
+start_time = 2018-02-11T18:00:00Z
