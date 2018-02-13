@@ -11,6 +11,8 @@ import (
 type Config struct {
 	Database  map[string]database
 	Parameter parameter
+	Number    int
+	Cmem      map[string]cmem
 }
 
 type database struct {
@@ -26,6 +28,22 @@ type parameter struct {
 	IsEnabled  bool      `toml:"is_enabled"`
 	StartTime  time.Time `toml:"start_time"`
 }
+
+// cmem
+type master struct {
+	DbIp     string   `toml:"db_ip"`
+	MasterIp []string `toml:"master_ip"`
+}
+
+type cmem struct {
+	Url    string   `toml:"url"`
+	Master []master `toml:"master"`
+}
+
+//type Config struct {
+//	Number int
+//	Cmem   map[string]cmem
+//}
 
 func main() {
 	// 从文件解析配置
@@ -62,4 +80,38 @@ func main() {
 	}
 
 	fmt.Println("配置时间是： ", config.Parameter.StartTime)
+	cmem := config.Cmem
+	if sz, ok := cmem["sz"]; !ok {
+		fmt.Println("not found sz config")
+	} else {
+		fmt.Println(sz.Url)
+		for _, m := range sz.Master {
+			fmt.Println(m.DbIp)
+			for _, mip := range m.MasterIp {
+				fmt.Printf("\t%s\n", mip)
+			}
+		}
+	}
+	//fmt.Println(cmem)
 }
+
+// 执行结果
+//➜  config git:(master) ✗ ./config
+//target {192.192.192.10 3306 user01 123456 test01}
+//source {192.192.192.10 3306 user01 123456 test01}
+//192.192.192.10
+//3306
+//user01
+//123456
+//test01
+//'test' not exist in configuration
+//配置时间是：  2018-02-11 18:00:00 +0000 UTC
+//http://example.com/cgi-bin/trmem_list_bid.cgi?act=list&start=0&num=%s&ver=3.0&masterport=9020&dbip=%s&masterip=%s
+//192.137.5.25
+//192.137.155.29
+//192.129.129.151
+//192.175.127.158
+//192.137.5.18
+//192.175.117.74
+//192.185.19.147
+//➜  config git:(master) ✗

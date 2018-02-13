@@ -1,7 +1,7 @@
 [database]
     # query rows from source database
     [database.source]
-    host = "10.10.10.10"
+    host = "192.192.192.10"
     port = 3306
     user = "user01"
     password = "123456"
@@ -9,7 +9,7 @@
 
     # insert rows to target database after parsed rows
     [database.target]
-    host = "10.10.10.10"
+    host = "192.192.192.10"
     port = 3306
     user = "user01"
     password = "123456"
@@ -19,3 +19,39 @@
 max_threads = 5
 is_enabled = false
 start_time = 2018-02-11T18:00:00Z
+
+
+# 定义每页展示的最大行数
+number = 500
+
+
+[cmem]
+    [cmem.sz]
+    # 要爬取的url pattern
+        url = "http://example.com/cgi-bin/trmem_list_bid.cgi?act=list&start=0&num=%s&ver=3.0&masterport=9020&dbip=%s&masterip=%s"
+        [[cmem.sz.master]]
+        db_ip = "192.137.5.25"
+        master_ip = ["192.137.155.29"]
+
+        [[cmem.sz.master]]
+        db_ip = "192.129.129.151"
+        master_ip = ['192.175.127.158',
+                     '192.137.5.18',
+                     '192.175.117.74',
+                     '192.185.19.147']
+
+    [cmem.sh]
+        url = "http://example.com/cgi-bin/trmem_list_bid.cgi?act=list&start=0&num=%s&ver=3.0&masterport=9020&dbip=%s&masterip=%s"
+        [[cmem.sh.master]]
+        db_ip = "192.139.231.59"
+        master_ip = ['192.92.44.175',
+                     '192.239.240.91',
+                     '192.180.33.16',
+                     '192.180.33.42']
+
+        [[cmem.sh.master]]
+        db_ip = "192.50.118.18"
+        master_ip = ['192.247.141.19',
+                     '192.92.45.47',
+                     '192.92.32.140']
+
