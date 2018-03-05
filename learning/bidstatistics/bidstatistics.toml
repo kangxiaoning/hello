@@ -1,0 +1,22 @@
+# trmem house 
+regions = [
+    "http://xxx.com",
+    "http://xxx.com",
+    "http://xxx.com"
+]
+
+# filter key word
+business_group = ["ABC", "DEF"]
+
+# database configuration
+[database]
+host     = "0.0.0.0"
+port     = 3306
+user     = "username"
+password = "password"
+database = "database"
+
+# username/password to login cmem system
+[auth]
+username = "username"
+password = "password"
