@@ -1,15 +1,15 @@
 package main
 
 import (
-	"net/http"
-	"fmt"
-	"log"
-	"io/ioutil"
-	"github.com/anaskhan96/soup"
-	"golang.org/x/text/transform"
 	"bytes"
-	"golang.org/x/text/encoding/simplifiedchinese"
 	"errors"
+	"fmt"
+	"github.com/anaskhan96/soup"
+	"golang.org/x/text/encoding/simplifiedchinese"
+	"golang.org/x/text/transform"
+	"io/ioutil"
+	"log"
+	"net/http"
 	"strings"
 )
 
