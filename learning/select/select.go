@@ -92,7 +92,7 @@ func doTasks() {
 			fmt.Println("done")
 		// 定期执行任务
 		case <-tick:
-			fmt.Println(time.Now(), "queue len =", len(values))
+			fmt.Println(time.Now().Format("2006-01-02 15:04:05"), "queue len =", len(values))
 		// 运行指定时间结束
 		case <-done:
 			fmt.Println("bye")
