@@ -84,6 +84,10 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
+<<<<<<< HEAD
   inputs-digest = "0f30ed97fb24d99cd918eb52f954b0111e89cd0977532b9def9c595d4b45ad7e"
+=======
+  inputs-digest = "57fdd7a1623e475d2d3fc1893a91f1c26de3decbe0ea3cd77abe2ee33b0c3ad6"
+>>>>>>> bfc5fd6c5187d701a78b0b2e991458961cfe831b
   solver-name = "gps-cdcl"
   solver-version = 1
