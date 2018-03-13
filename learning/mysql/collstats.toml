@@ -1,0 +1,30 @@
+# save stats data to target database
+[database]
+host = '10.10.10.10'
+port = 4051
+user = 'username'
+password = 'password'
+database = 'database'
+
+
+# all mongodb cluster dialinfo
+[[cluster]]
+addrs = ["10.10.10.163:6000", "10.10.10.77:6000", "10.10.10.8:6000"]
+database = "database"
+source = "admin"
+username = "username"
+password = "password"
+
+[[cluster]]
+addrs = ["10.10.10.133:6001", "10.10.10.134:6000", "10.10.10.135:6001"]
+database = "database"
+source = "admin"
+username = "username"
+password = "password"
+
+[[cluster]]
+addrs = ["10.10.10.230:6000", "10.10.10.87:6000", "10.10.10.148:6000"]
+database = "database"
+source = "admin"
+username = "username"
+password = "password"
