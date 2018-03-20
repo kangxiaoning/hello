@@ -1,0 +1,12 @@
+2018-03-14 23:56:28.948 scriptlog.go:27 DEBU debug
+2018-03-14 23:56:28.949 scriptlog.go:28 INFO info
+2018-03-14 23:56:28.949 scriptlog.go:29 NOTI notice
+2018-03-14 23:56:28.949 scriptlog.go:30 WARN warning
+2018-03-14 23:56:28.949 scriptlog.go:31 ERRO err
+2018-03-14 23:56:28.949 scriptlog.go:32 CRIT crit
+2018-03-15 00:00:27.114 scriptlog.go:33 DEBU debug
+2018-03-15 00:00:27.116 scriptlog.go:34 INFO info
+2018-03-15 00:00:27.116 scriptlog.go:35 NOTI notice
+2018-03-15 00:00:27.116 scriptlog.go:36 WARN warning
+2018-03-15 00:00:27.116 scriptlog.go:37 ERRO err
+2018-03-15 00:00:27.116 scriptlog.go:38 CRIT crit
