@@ -28,4 +28,23 @@ func main() {
 	fmt.Println("end:", time.Unix(0,
 		1521528972389*int64(time.Millisecond)).Format(
 		"2006-01-02 15:04:05"))
+
+	now := time.Now()
+	s := time.Date(now.Year(),
+		now.Month(),
+		now.Day(),
+		now.Hour(),
+		now.Minute()-1,
+		0,
+		0,
+		now.Location()).UnixNano() / int64(time.Millisecond)
+	e := time.Date(now.Year(),
+		now.Month(),
+		now.Day(),
+		now.Hour(),
+		now.Minute(),
+		0,
+		0,
+		now.Location()).UnixNano() / int64(time.Millisecond)
+	fmt.Println(s, e)
 }
