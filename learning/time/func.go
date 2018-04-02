@@ -29,22 +29,35 @@ func main() {
 		1521528972389*int64(time.Millisecond)).Format(
 		"2006-01-02 15:04:05"))
 
-	now := time.Now()
-	s := time.Date(now.Year(),
-		now.Month(),
-		now.Day(),
-		now.Hour(),
-		now.Minute()-1,
-		0,
-		0,
-		now.Location()).UnixNano() / int64(time.Millisecond)
-	e := time.Date(now.Year(),
-		now.Month(),
-		now.Day(),
-		now.Hour(),
-		now.Minute(),
-		0,
-		0,
-		now.Location()).UnixNano() / int64(time.Millisecond)
-	fmt.Println(s, e)
+	// 经验证到达60秒时，如下机制依然得到正确的时间
+	tick := time.Tick(time.Minute)
+	for {
+		n := time.Now()
+		sstart := time.Date(n.Year(),
+			n.Month(),
+			n.Day(),
+			n.Hour(),
+			n.Minute(),
+			n.Second()-2,
+			0,
+			n.Location())
+		send := time.Date(n.Year(),
+			n.Month(),
+			n.Day(),
+			n.Hour(),
+			n.Minute(),
+			n.Second()-1,
+			0,
+			n.Location())
+
+		time.Sleep(time.Second)
+
+		select {
+		case <-tick:
+			return
+		case <-time.After(time.Second):
+			fmt.Println(sstart, send)
+		}
+	}
+
 }
